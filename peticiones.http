@@ -1,0 +1,28 @@
+### registrar usuario
+POST  http://localhost:3001/usuarios/registro
+content-type: application/json
+
+{
+  "nombre": "Jorge Luchetta",
+  "email": "usuario@example.com",
+  "password": "hola123",
+  "direccion": "Calle 123",
+  "ciudad": "Abadia",
+  "pais": "Colombia",
+  "codigo_postal": "080020",
+  "rol": "developer"
+}
+
+### iniciar sesion
+POST  http://localhost:3001/usuarios/login
+content-type: application/json
+
+{
+  "email": "usuario@example.com",
+  "password": "hola123"
+}
+
+### Obtener perfil
+GET http://localhost:3001/usuarios/perfil
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg1NjgwNjcsImV4cCI6MTcwODU3MTY2N30.GG7q-YP4mfb14mXCGPfjpQWV24_5tSZtNyds6k8WLDI
+

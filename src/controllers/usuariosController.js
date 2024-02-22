@@ -3,12 +3,12 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const pool = require('../database/db');
-const secretKey = process.env.JWT_SECRET;
+const secretKey = process.env.JWT_SECRET; 
 
 // Función para registrar un nuevo usuario
 async function registro(req, res) {
     try {
-        const { nombre, email, contraseña, direccion, ciudad, pais, codigo_postal, rol } = req.body;
+        const { nombre, email, password, direccion, ciudad, pais, codigo_postal, rol } = req.body;
 
         // Verificar si el usuario ya existe en la base de datos
         const usuarioExistente = await pool.query('SELECT * FROM usuarios WHERE email = $1', [email]);
@@ -16,14 +16,14 @@ async function registro(req, res) {
             return res.status(400).json({ msg: 'El usuario ya está registrado' });
         }
 
-        // Hash de la contraseña
+        // Hash del password
         const salt = await bcrypt.genSalt(10);
-        const contraseñaHash = await bcrypt.hash(contraseña, salt);
+        const passwordHash = await bcrypt.hash(password, salt);
 
         // Insertar nuevo usuario en la base de datos
         const nuevoUsuario = await pool.query(
-            'INSERT INTO usuarios (nombre, email, contraseña, direccion, ciudad, pais, codigo_postal, rol) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *',
-            [nombre, email, contraseñaHash, direccion, ciudad, pais, codigo_postal, rol]
+            'INSERT INTO usuarios (nombre, email, password, direccion, ciudad, pais, codigo_postal, rol) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *',
+            [nombre, email, passwordHash, direccion, ciudad, pais, codigo_postal, rol]
         );
 
         res.status(201).json({ msg: 'Usuario registrado correctamente', usuario: nuevoUsuario.rows[0] });
@@ -36,7 +36,7 @@ async function registro(req, res) {
 // Función para iniciar sesión de un usuario
 async function login(req, res) {
     try {
-        const { email, contraseña } = req.body;
+        const { email, password } = req.body;
 
         // Verificar si el usuario existe en la base de datos
         const usuario = await pool.query('SELECT * FROM usuarios WHERE email = $1', [email]);
@@ -44,9 +44,9 @@ async function login(req, res) {
             return res.status(400).json({ msg: 'Credenciales inválidas' });
         }
 
-        // Verificar la contraseña
-        const contraseñaValida = await bcrypt.compare(contraseña, usuario.rows[0].contraseña);
-        if (!contraseñaValida) {
+        // Verificar el password
+        const passwordValido = await bcrypt.compare(password, usuario.rows[0].password);
+        if (!passwordValido) {
             return res.status(400).json({ msg: 'Credenciales inválidas' });
         }
 

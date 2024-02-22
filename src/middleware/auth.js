@@ -2,7 +2,8 @@
 
 const jwt = require('jsonwebtoken');
 
-const secretKey = process.env.SECRET; 
+const secretKey = process.env.JWT_SECRET; 
+
 
 function auth(req, res, next) {
   // Obtener el token del encabezado de autorización
