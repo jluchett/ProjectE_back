@@ -1,6 +1,7 @@
+// usuarios.js - archivo de rutas para el usuario
 const express = require('express');
 const router = express.Router();
-const usuariosController = require('../controllers/usuariosController');
+const usuariosController = require('../controllers/usuarios/usuariosController');
 const auth = require('../middleware/auth');
 
 // Ruta para registrar un usuario

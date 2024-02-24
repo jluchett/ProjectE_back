@@ -1,3 +1,4 @@
+// usuariosValidator.js
 const Joi = require('joi');
 
 // Esquema de validación para la solicitud de registro de usuario
