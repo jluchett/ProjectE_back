@@ -24,11 +24,11 @@ content-type: application/json
 
 ### Obtener perfil
 GET http://localhost:3001/usuarios/perfil
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg3NDUzMzQsImV4cCI6MTcwODc0ODkzNH0.-T4uZbSq8Y_UMOorr38T8cYcUQyYw-pab8EF6bMBz0Q
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg4MDcyMTUsImV4cCI6MTcwODgxMDgxNX0.Hnt-DzFRJZQnIns9YwtFIHSQABh7rZJ7a8SCeTmEZQQ
 
 ### Obtener lista productos
 GET http://localhost:3001/productos/listar
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg3NDUzMzQsImV4cCI6MTcwODc0ODkzNH0.-T4uZbSq8Y_UMOorr38T8cYcUQyYw-pab8EF6bMBz0Q
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg4MDcyMTUsImV4cCI6MTcwODgxMDgxNX0.Hnt-DzFRJZQnIns9YwtFIHSQABh7rZJ7a8SCeTmEZQQ
 
 ### registrar producto
 POST http://localhost:3001/productos/crear
@@ -40,4 +40,17 @@ content-type: application/json
   "precio": 9.99,
   "cantidad_disponible": 100,
   "imagen": "ruta/de/la/imagen.jpg"
+}
+
+### actualizar producto
+PUT http://localhost:3001/productos/update/2
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg4MDcyMTUsImV4cCI6MTcwODgxMDgxNX0.Hnt-DzFRJZQnIns9YwtFIHSQABh7rZJ7a8SCeTmEZQQ
+content-type: application/json
+
+{
+  "nombre": "Mouse Genius",
+  "descripcion": "Mouse inalambrico marca Genius",
+  "precio": 7.87,
+  "cantidad_disponible": 120,
+  "imagen": "ruta/nueva/imagen.jpg"
 }

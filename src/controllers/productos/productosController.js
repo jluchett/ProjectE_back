@@ -4,14 +4,14 @@
 const crearProducto = require('./crearProducto');
 const listarProductos = require('./listarProductos');
 // const obtenerProducto = require('');
-// const actualizarProducto = require('');
+const actualizarProducto = require('./actualizarProducto');
 // const eliminarProducto = require('');
 
 // Exportación de las funciones del controlador
 module.exports = {
   crearProducto,
-  listarProductos
+  listarProductos,
   // obtenerProducto,
-  // actualizarProducto,
+  actualizarProducto
   // eliminarProducto
 };
