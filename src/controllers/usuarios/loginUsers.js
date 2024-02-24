@@ -6,25 +6,16 @@ const secretKey = process.env.JWT_SECRET;
 const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
-
     // Verificar si el usuario existe en la base de datos
-    const usuario = await pool.query(
-      "SELECT * FROM usuarios WHERE email = $1",
-      [email]
-    );
+    const usuario = await pool.query("SELECT * FROM usuarios WHERE email = $1",[email]);
     if (usuario.rows.length === 0) {
       return res.status(400).json({ msg: "Credenciales inválidas" });
     }
-
     // Verificar el password
-    const passwordValido = await bcrypt.compare(
-      password,
-      usuario.rows[0].password
-    );
+    const passwordValido = await bcrypt.compare(password, usuario.rows[0].password);
     if (!passwordValido) {
       return res.status(400).json({ msg: "Credenciales inválidas" });
     }
-
     // Generar token de autenticación
     const payload = {
       usuario: {

@@ -24,5 +24,20 @@ content-type: application/json
 
 ### Obtener perfil
 GET http://localhost:3001/usuarios/perfil
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg2MjI1NjcsImV4cCI6MTcwODYyNjE2N30.KOUY3ld0_W6-MsVhiSmoasxOpSoKeEMkix4GVDDlemc
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg3NDUzMzQsImV4cCI6MTcwODc0ODkzNH0.-T4uZbSq8Y_UMOorr38T8cYcUQyYw-pab8EF6bMBz0Q
 
+### Obtener lista productos
+GET http://localhost:3001/productos/listar
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg3NDUzMzQsImV4cCI6MTcwODc0ODkzNH0.-T4uZbSq8Y_UMOorr38T8cYcUQyYw-pab8EF6bMBz0Q
+
+### registrar producto
+POST http://localhost:3001/productos/crear
+content-type: application/json
+
+{
+  "nombre": "Teclado genius",
+  "descripcion": "Teclado inalambrico marca Genius alfanumerico",
+  "precio": 9.99,
+  "cantidad_disponible": 100,
+  "imagen": "ruta/de/la/imagen.jpg"
+}
