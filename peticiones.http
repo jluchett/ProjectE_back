@@ -35,10 +35,10 @@ POST http://localhost:3001/productos/crear
 content-type: application/json
 
 {
-  "nombre": "Teclado genius",
+  "nombre": "hola miun",
   "descripcion": "Teclado inalambrico marca Genius alfanumerico",
-  "precio": 9.99,
-  "cantidad_disponible": 100,
+  "precio": 15.5,
+  "cantidad_disponible": 22,
   "imagen": "ruta/de/la/imagen.jpg"
 }
 

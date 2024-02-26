@@ -1,11 +1,15 @@
-// crearProducto.js
-
 // Importación de dependencias necesarias
 const pool = require("../../database/db");
+const validProducts = require("../../validatorS/productosValidator")
 
 // Función para crear un nuevo producto
 const crearProducto = async (req, res) =>{
   try {
+    // Validar los datos de entrada utilizando el esquema de validación
+    const { error } = validProducts.validate(req.body);
+    if (error) {
+      return res.status(400).json({ error: error.details[0].message });
+    }
     const { nombre, descripcion, precio, cantidad_disponible, imagen } = req.body;
 
     // Insertar nuevo producto en la base de datos
