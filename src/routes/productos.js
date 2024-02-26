@@ -13,4 +13,7 @@ router.put('/update/:id', auth, productosController.actualizarProducto);
 // Ruta protegida para obtener listado de productos
 router.get('/listar', auth, productosController.listarProductos);
 
+// Ruta para obtener un producto por su ID
+router.get('/get/:id', productosController.obtenerProducto);
+
 module.exports = router;

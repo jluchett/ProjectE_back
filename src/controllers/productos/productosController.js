@@ -3,7 +3,7 @@
 // Importación de los módulos de funciones específicas
 const crearProducto = require('./crearProducto');
 const listarProductos = require('./listarProductos');
-// const obtenerProducto = require('');
+const obtenerProducto = require('./obtenerProducto');
 const actualizarProducto = require('./actualizarProducto');
 // const eliminarProducto = require('');
 
@@ -11,7 +11,7 @@ const actualizarProducto = require('./actualizarProducto');
 module.exports = {
   crearProducto,
   listarProductos,
-  // obtenerProducto,
+  obtenerProducto,
   actualizarProducto
   // eliminarProducto
 };
