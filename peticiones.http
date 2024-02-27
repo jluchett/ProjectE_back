@@ -13,6 +13,20 @@ content-type: application/json
   "rol": "true"
 }
 
+### actualizar usuario
+POST  http://localhost:3001/usuarios/update/1
+content-type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDkwMDQ4MTMsImV4cCI6MTcwOTAwODQxM30.fxNMGoffmZ71mok3OwRZk0zeuQq082A8RuLhIWwYEdE
+
+{
+  "nombre": "Jorge Luchetta",
+  "email": "jluchett@gmail.com",
+  "direccion": "calle 46A # 54 - 46",
+  "ciudad": "Abadia",
+  "pais": "Colombia",
+  "codigo_postal": "080020"
+}
+
 ### iniciar sesion
 POST  http://localhost:3001/usuarios/login
 content-type: application/json
@@ -24,7 +38,7 @@ content-type: application/json
 
 ### Obtener perfil
 GET http://localhost:3001/usuarios/perfil
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg4MDcyMTUsImV4cCI6MTcwODgxMDgxNX0.Hnt-DzFRJZQnIns9YwtFIHSQABh7rZJ7a8SCeTmEZQQ
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDkwMDQ4MTMsImV4cCI6MTcwOTAwODQxM30.fxNMGoffmZ71mok3OwRZk0zeuQq082A8RuLhIWwYEdE
 
 ### Obtener lista productos
 GET http://localhost:3001/productos/listar

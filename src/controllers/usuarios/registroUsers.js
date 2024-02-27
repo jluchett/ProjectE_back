@@ -1,11 +1,11 @@
 const bcrypt = require("bcrypt");
 const pool = require("../../database/db");
-const registroUsuario = require("../../validators/usuariosValidator");
+const validar = require("../../validators/usuariosValidator");
 
 const registerUser = async (req, res) => {
   try {
     // Validar los datos de entrada utilizando el esquema de validación
-    const { error } = registroUsuario.validate(req.body);
+    const { error } = validar.registroUsuario.validate(req.body);
     if (error) {
       return res.status(400).json({ error: error.details[0].message });
     }

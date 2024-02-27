@@ -13,4 +13,7 @@ router.post('/login', usuariosController.login);
 // Ruta protegida para obtener información del usuario
 router.get('/perfil', auth, usuariosController.perfil);
 
+// Ruta protegida para obtener información del usuario
+router.post('/update/:id', auth, usuariosController.actualizarPerfil);
+
 module.exports = router;
