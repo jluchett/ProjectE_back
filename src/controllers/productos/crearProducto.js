@@ -1,4 +1,3 @@
-// Importación de dependencias necesarias
 const pool = require("../../database/db");
 const validProducts = require("../../validatorS/productosValidator")
 

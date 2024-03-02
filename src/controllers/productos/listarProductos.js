@@ -1,6 +1,4 @@
-// listarProductos.js
 
-// Importación de dependencias necesarias
 const pool = require("../../database/db");
 
 // Función para listar todos los productos
@@ -15,6 +13,5 @@ async function listarProductos(req, res) {
     res.status(500).send("Error del servidor");
   }
 }
-
 // Exportación de la función
 module.exports = listarProductos;
