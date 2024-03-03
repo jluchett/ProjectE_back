@@ -1,8 +1,13 @@
 const pool = require("../../database/db");
+const validProducts = require("../../validatorS/productosValidator");
 
 // Función para actualizar un producto
 async function actualizarProducto(req, res) {
   try {
+    const { error } = validProducts.validate(req.body);
+    if (error) {
+      return res.status(400).json({ error: error.details[0].message });
+    }
     const { id } = req.params; // Obtener el ID del producto de los parámetros de la URL
     const { nombre, descripcion, precio, cantidad_disponible, imagen } = req.body; // Obtener los datos actualizados del producto del cuerpo de la solicitud
     // Actualizar el producto en la base de datos
