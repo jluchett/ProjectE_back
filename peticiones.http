@@ -32,7 +32,7 @@ POST  http://localhost:3001/usuarios/login
 content-type: application/json
 
 {
-  "email": "usuario@example.com",
+  "email": "jluchett@gmail.com",
   "password": "hola123"
 }
 

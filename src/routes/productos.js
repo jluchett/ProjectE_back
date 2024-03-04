@@ -8,7 +8,7 @@ router.post('/crear', productosController.crearProducto);
 // Ruta para actualizar un producto
 router.put('/update/:id', auth, productosController.actualizarProducto);
 // Ruta protegida para obtener listado de productos
-router.get('/listar', auth, productosController.listarProductos);
+router.get('/listar', productosController.listarProductos);
 // Ruta para obtener un producto por su ID
 router.get('/get/:id', productosController.obtenerProducto);
 
