@@ -19,7 +19,7 @@ const forgotPassword = async (req, res) => {
     const resetToken = crypto.randomBytes(20).toString("hex");
     const resetTokenExpiration = Date.now() + 3600000; // Expira en 1 hora
     await pool.query(
-      "INSERT INTO tokens(email, resetToken, expirationToken) values ($1, $2, $3)",
+      "INSERT INTO tokens(email, resettoken, resettokenexpira) values ($1, $2, $3)",
       [email, resetToken, resetTokenExpiration]
     );
 
@@ -35,7 +35,7 @@ const forgotPassword = async (req, res) => {
         rejectUnauthorized: false,
       },
     });
-    const resetUrl = `http://localhost:3002/resetPass/${resetToken}`;
+    const resetUrl = `http://localhost:3001/usuarios/resetPass/${resetToken}`;
     const mailOptions = {
       from: process.env.REMITE,
       to: user.email,
