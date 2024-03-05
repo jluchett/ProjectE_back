@@ -14,8 +14,8 @@ const resetPassword = async (req, res) => {
     const passwordHash = await bcrypt.hash(newPassword, 10);
     // Busca el usuario por el token de restablecimiento de contraseña
     const tokenResult = await pool.query(
-      "SELECT * FROM tokens WHERE resetToken = $1 AND resetTokenExpira > NOW()",
-      [token]
+      "SELECT * FROM tokens WHERE resettoken = $1 AND resettokenexpira > NOW()",
+      [resetToken]
     );
     // Verificar si el token es válido y aún no ha expirado
     if (tokenResult.rows.length === 0) {
@@ -26,12 +26,12 @@ const resetPassword = async (req, res) => {
       });
     }
     // Actualizar la contraseña del usuario en la base de datos
-    await pool.query("UPDATE usuarios SET contraseña = $1 WHERE email = $2", [
+    await pool.query("UPDATE usuarios SET password = $1 WHERE email = $2", [
       passwordHash,
       tokenResult.rows[0].email,
     ]);
     // Eliminar el token de la base de datos
-    await pool.query("DELETE FROM tokens WHERE resetToken = $1", [token]);
+    await pool.query("DELETE FROM tokens WHERE resettoken = $1", [resetToken]);
     //respuesta del servidor
     res.json({
       message: "Contraseña reestablecida correctamente",

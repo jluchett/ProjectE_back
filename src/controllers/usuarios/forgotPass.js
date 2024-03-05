@@ -17,7 +17,7 @@ const forgotPassword = async (req, res) => {
 
     // Genera un token único para restablecer la contraseña
     const resetToken = crypto.randomBytes(20).toString("hex");
-    const resetTokenExpiration = Date.now() + 3600000; // Expira en 1 hora
+    const resetTokenExpiration = new Date(Date.now() + 3600000).toISOString();
     await pool.query(
       "INSERT INTO tokens(email, resettoken, resettokenexpira) values ($1, $2, $3)",
       [email, resetToken, resetTokenExpiration]
@@ -38,10 +38,10 @@ const forgotPassword = async (req, res) => {
     const resetUrl = `http://localhost:3001/usuarios/resetPass/${resetToken}`;
     const mailOptions = {
       from: process.env.REMITE,
-      to: user.email,
+      to: email,
       subject: "Restablecimiento de contraseña",
       text: `Hola ${
-        user.email.split("@")[0]
+        email.split("@")[0]
       },\n\nPara restablecer tu contraseña, haz clic en el siguiente enlace:\n\n${resetUrl}`,
     };
 
