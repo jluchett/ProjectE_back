@@ -74,9 +74,17 @@ GET http://localhost:3001/productos/get/2
 Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDg4MDcyMTUsImV4cCI6MTcwODgxMDgxNX0.Hnt-DzFRJZQnIns9YwtFIHSQABh7rZJ7a8SCeTmEZQQ
 
 ### olvido contraseña
-PUT  http://localhost:3001/usuarios/resetPass/0fc286679fa324fdddde36ff76bbe7bcef4b5d43
+POST http://localhost:3001/usuarios/forgotpass
 content-type: application/json
 
 {
-  "newPassword": "Agua123"
+  "email": "jluchett@gmail.com"
+}
+
+### reset contraseña
+PUT http://localhost:3001/usuarios/resetPass/25fd082f349d529191a8028cb6a522e1ef6881de
+content-type: application/json
+
+{
+  "newPassword": "First18"
 }
