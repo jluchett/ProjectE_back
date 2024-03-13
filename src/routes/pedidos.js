@@ -6,6 +6,8 @@ const auth = require('../middleware/auth');
 // Ruta para registrar un pedido
 router.post('/crear', pedidosController.registrarPedido);
 // Ruta para consultar todos los pedidos
-router.post('/listar', pedidosController.listarPedidos);
+router.get('/listar', pedidosController.listarPedidos);
+// Ruta para obtener pedido por id
+router.get('/obtener/:id',pedidosController.obtenerPedido);
 
 module.exports = router;
