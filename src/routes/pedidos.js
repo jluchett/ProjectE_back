@@ -10,6 +10,8 @@ router.get('/listar', pedidosController.listarPedidos);
 // Ruta para obtener pedido por id
 router.get('/obtener/:id',pedidosController.obtenerPedido);
 // Ruta para actualizar pedido por id
-router.put('/actualiza/:id',pedidosController.actualizarPedido);
+router.put('/actualizar/:id',pedidosController.actualizarPedido);
+// Ruta para eliminar pedido por id
+router.delete('/delete/:id',pedidosController.eliminarPedido);
 
 module.exports = router;
