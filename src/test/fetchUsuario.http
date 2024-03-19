@@ -33,12 +33,12 @@ content-type: application/json
 
 {
   "email": "jluchett@gmail.com",
-  "password": "Agua123"
+  "password": "First18"
 }
 
 ### Obtener perfil
 GET http://localhost:3001/usuarios/perfil
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoidXN1YXJpb0BleGFtcGxlLmNvbSJ9LCJpYXQiOjE3MDkwMDQ4MTMsImV4cCI6MTcwOTAwODQxM30.fxNMGoffmZ71mok3OwRZk0zeuQq082A8RuLhIWwYEdE
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjp7ImlkIjoxLCJub21icmUiOiJKb3JnZSBMdWNoZXR0YSIsImVtYWlsIjoiamx1Y2hldHRAZ21haWwuY29tIn0sImlhdCI6MTcxMDg2NzYzNiwiZXhwIjoxNzEwODcxMjM2fQ.SJVGS1ameNhAYmlt-gohjQy-A5jZQ6og0xrvvW6jnzI
 
 
 ### olvido contraseña

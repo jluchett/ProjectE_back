@@ -4,8 +4,8 @@ const Joi = require('joi');
 // Esquema de validación para la solicitud de creación de un pedido
 const crearPedidoSchema = Joi.object({
   id_usuario: Joi.number().integer().required(),
-  fecha: Joi.date().required(),
   estado: Joi.string().max(50).required(),
+  fecha: Joi.date().required(),
   total: Joi.number().precision(2).positive().required()
 });
 
