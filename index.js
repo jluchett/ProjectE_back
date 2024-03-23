@@ -4,6 +4,7 @@ const dotenv = require('dotenv');
 const usuariosRouter = require('./src/routes/usuarios');
 const productosRouter = require('./src/routes/productos');
 const pedidosRouter = require('./src/routes/pedidos');
+const categoriasRouter = require('./src/routes/categorias')
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use('/usuarios', usuariosRouter);
 app.use('/productos', productosRouter);
 app.use('/pedidos', pedidosRouter);
+app.use('/categorias', categoriasRouter);
 
 // Middleware para manejar errores
 app.use((err, req, res, next) => {
