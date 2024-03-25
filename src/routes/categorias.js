@@ -6,6 +6,7 @@ const auth = require("../middleware/auth");
 router.post("/crear", categoriasController.crearCategoria);
 router.get('/listar', categoriasController.listarCategorias);
 router.put('/update/:id', categoriasController.updateCategoria);
-router.delete('/eliminar/:id',categoriasController.eliminarCategoria)
+router.delete('/eliminar/:id',categoriasController.eliminarCategoria);
+router.get('/get/:id', categoriasController.obtenerCategoria)
 
 module.exports = router;
