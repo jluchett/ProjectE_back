@@ -4,13 +4,13 @@ content-type: application/json
 
 {
   "nombre": "Jorge Luchetta",
-  "email": "usuario@example.com",
+  "email": "jluchett@gmail.com",
   "password": "hola123",
   "direccion": "call 45 # 54 - 79",
   "ciudad": "Abadia",
   "pais": "Colombia",
   "codigo_postal": "080020",
-  "rol": "true"
+  "rol": "Developer"
 }
 
 ### actualizar usuario
