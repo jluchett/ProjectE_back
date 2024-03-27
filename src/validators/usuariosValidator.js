@@ -13,7 +13,7 @@ const registroUsuario = Joi.object({
   rol: Joi.string().required()
 });
 
-// Esquema de validación para la solicitud de registro de usuario
+// Esquema de validación para la solicitud de actualizacion de usuario
 const updateUsuario = Joi.object({
   nombre: Joi.string().required(),
   email: Joi.string().email().required(),
