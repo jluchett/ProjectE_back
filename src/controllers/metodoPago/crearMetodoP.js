@@ -6,7 +6,7 @@ const crearMetodo = async (req, res) => {
     if (!nombre || typeof nombre !== "string") {
       return res
         .status(400)
-        .json({ msg: "El nombre debe ser texto o no estar vacio" });
+        .json({ msg: "El nombre debe ser texto y no estar vacio" });
     }
     const existeMetodo = await pool.query("select * from where nombre = $1", [
       nombre,

@@ -4,7 +4,8 @@ const dotenv = require('dotenv');
 const usuariosRouter = require('./src/routes/usuarios');
 const productosRouter = require('./src/routes/productos');
 const pedidosRouter = require('./src/routes/pedidos');
-const categoriasRouter = require('./src/routes/categorias')
+const categoriasRouter = require('./src/routes/categorias');
+const metodosRouter = require('./src/routes/metodosPago');
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ app.use('/usuarios', usuariosRouter);
 app.use('/productos', productosRouter);
 app.use('/pedidos', pedidosRouter);
 app.use('/categorias', categoriasRouter);
+app.use('/metodos',metodosRouter);
 
 // Middleware para manejar errores
 app.use((err, req, res, next) => {
