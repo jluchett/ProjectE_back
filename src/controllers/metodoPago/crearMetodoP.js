@@ -8,7 +8,7 @@ const crearMetodo = async (req, res) => {
         .status(400)
         .json({ msg: "El nombre debe ser texto y no estar vacio" });
     }
-    const existeMetodo = await pool.query("select * from where nombre = $1", [
+    const existeMetodo = await pool.query("select * from metodos_pago where nombre = $1", [
       nombre,
     ]);
     if (existeMetodo) {
@@ -17,7 +17,7 @@ const crearMetodo = async (req, res) => {
         .json({ msg: "Este nombre de metodo pago ya esta registrado" });
     }
     await pool.query("INSERT INTO metodos_pago (nombre) values ($1)", [nombre]);
-    res.status(201).json({ msg: "Metodo registrado" });
+    res.status(201).json({ msg: "Metodo pago registrado" });
   } catch (error) {
     console.log(error.message);
     res.status(500).send("Error del servidor");
